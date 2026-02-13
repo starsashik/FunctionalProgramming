@@ -1,0 +1,120 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff9e6; /* мягкий светло-жёлтый фон */
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+}
+
+.app {
+    background-color: #fffef8;
+    width: 460px;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(180, 160, 60, 0.08);
+    border: 1px solid #f3e7b3;
+}
+
+h1 {
+    text-align: center;
+    color: #8a7b2f;
+    margin-bottom: 20px;
+}
+
+/* ===== Ввод задачи ===== */
+
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+input {
+    flex: 1;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #eadf9c;
+    background-color: #fffdf4;
+}
+
+input:focus {
+    outline: none;
+    border-color: #e6d36a;
+}
+
+/* ===== Кнопки ===== */
+
+button {
+    padding: 8px 14px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background-color: #f5e7a3;
+    color: #6e5f1a;
+    font-weight: 500;
+    transition: 0.2s ease;
+}
+
+button:hover {
+    background-color: #eddc87;
+}
+
+/* ===== Фильтры ===== */
+
+.filters {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+select {
+    padding: 6px;
+    border-radius: 8px;
+    border: 1px solid #eadf9c;
+    background-color: #fffdf4;
+}
+
+/* ===== Задачи ===== */
+
+.task {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: #fff7cc;
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    transition: 0.2s ease;
+}
+
+.task-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.task-top {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.task:hover {
+    background-color: #fff2a8;
+}
+
+.task-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: #b6a85c;
+}
+
+.time {
+    font-size: 12px;
+    color: #a79a55;
+    margin-top: 4px;
+}

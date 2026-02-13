@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Список задач (FP)</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="app">
+    <h1>Список задач</h1>
+
+    <div class="input-group">
+        <input type="text" id="taskInput" placeholder="Введите задачу..." />
+        <button id="addBtn">Добавить</button>
+    </div>
+
+    <div class="filters">
+        <div>
+            <label>Статус:</label>
+            <select id="statusFilter">
+                <option value="all">Все</option>
+                <option value="active">Не выполненные</option>
+                <option value="completed">Выполненные</option>
+            </select>
+        </div>
+
+        <div>
+            <label>Сортировка:</label>
+            <select id="sortFilter">
+                <option value="newest">Сначала новые</option>
+                <option value="oldest">Сначала старые</option>
+            </select>
+        </div>
+    </div>
+
+    <div id="taskList"></div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
