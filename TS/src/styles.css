@@ -1,0 +1,445 @@
+/* styles.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ОСНОВНОЙ ФОН СТРАНИЦЫ */
+body {
+    font-family: 'Courier New', 'Westminster', 'Old West', serif;
+    background: #2a1e0f;
+    background-image:
+            linear-gradient(45deg, #3d2e1b 25%, transparent 25%),
+            linear-gradient(-45deg, #3d2e1b 25%, transparent 25%),
+            linear-gradient(45deg, transparent 75%, #3d2e1b 75%),
+            linear-gradient(-45deg, transparent 75%, #3d2e1b 75%);
+    background-size: 20px 20px;
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* ОСНОВНОЙ КОНТЕЙНЕР КАЛЬКУЛЯТОРА */
+.calculator {
+    background: #4a3720 radial-gradient(circle at 30% 30%, #6b4f2e 0%, #2c1f10 100%);
+    border: 15px solid #8b7355;
+    border-radius: 40px 40px 20px 20px;
+    box-shadow:
+            0 20px 30px rgba(0,0,0,0.7),
+            inset 0 0 20px #221a0e,
+            inset 0 0 0 2px #c0a070;
+    padding: 30px 25px;
+    position: relative;
+    width: 700px;
+    transform:scale(0.8);
+}
+
+/* ДЕКОРАТИВНЫЕ ЗАКЛЕПКИ ПО УГЛАМ */
+.calculator::before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 25px;
+    height: 25px;
+    background: #cdb28b;
+    border-radius: 50%;
+    box-shadow:
+            0 0 0 4px #8b7355,
+            inset 0 2px 5px #f0d8b0,
+            inset 0 -2px 5px #5a3e1f;
+}
+
+.calculator::after {
+    content: '';
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 25px;
+    height: 25px;
+    background: #cdb28b;
+    border-radius: 50%;
+    box-shadow:
+            0 0 0 4px #8b7355,
+            inset 0 2px 5px #f0d8b0,
+            inset 0 -2px 5px #5a3e1f;
+}
+
+/* ВЕРХНЯЯ ВЫВЕСКА */
+.sign {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #e8d2b0;
+    text-shadow:
+            3px 3px 0 #3a2816,
+            -1px -1px 0 #c0a070;
+    font-family: 'Impact', 'Courier New', monospace;
+    letter-spacing: 3px;
+    border-bottom: 3px dashed #b89a70;
+    padding-bottom: 15px;
+}
+
+.sign h1 {
+    font-size: 36px;
+    transform: rotate(-1deg);
+}
+
+.sign p {
+    font-size: 16px;
+    font-style: italic;
+    color: #d4bc94;
+}
+
+/* ЭКРАН ДИСПЛЕЯ */
+.display {
+    background: #1a1a1a;
+    border: 8px solid #5e4a31;
+    border-radius: 15px;
+    padding: 15px;
+    margin-bottom: 25px;
+    box-shadow:
+            inset 0 0 20px #000,
+            0 5px 0 #2f2419;
+}
+
+/* ПОЛЕ ВЫРАЖЕНИЯ (ЗЕЛЕНЫЙ ЭКРАН) */
+.expression {
+    background: #2a3a2a;
+    color: #b0ffb0;
+    font-family: 'Digital', 'Courier New', monospace;
+    font-size: 36px;
+    text-align: right;
+    padding: 15px 20px;
+    border-radius: 8px;
+    text-shadow: 0 0 10px #00ff00;
+    box-shadow: inset 0 0 15px #000;
+    min-height: 80px;
+    word-wrap: break-word;
+    border: 2px solid #5a7a5a;
+}
+
+/* СООБЩЕНИЯ ОБ ОШИБКАХ */
+.error-message {
+    color: #ffa07a;
+    font-family: 'Courier New', monospace;
+    font-size: 18px;
+    margin-top: 10px;
+    text-align: center;
+    min-height: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-shadow: 0 0 5px #ff4500;
+}
+
+/* СЕКЦИЯ С ДИСКАМИ (КОДОВЫЙ ЗАМОК) */
+.lock-section {
+    background: #5e4a31;
+    background-image: repeating-linear-gradient(45deg, #6f5a3e 0px, #6f5a3e 2px, #5a4530 2px, #5a4530 8px);
+    border: 5px solid #ab8e64;
+    border-radius: 30px;
+    padding: 25px 15px;
+    margin-bottom: 25px;
+    box-shadow: inset 0 0 20px #2f2419;
+}
+
+/* ЗАГОЛОВОК НАД ДИСКАМИ */
+.lock-label {
+    text-align: center;
+    color: #efd6b0;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 0 #3a2816;
+    letter-spacing: 4px;
+}
+
+/* РЯД С ДИСКАМИ */
+.dial-row {
+    display: flex;
+    justify-content: space-around;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+/* КОНТЕЙНЕР ОДНОГО ДИСКА */
+.dial-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+/* САМ ДИСК */
+.dial {
+    width: 100px;
+    height: 100px;
+    background: #cdb28b;
+    background-image: radial-gradient(circle at 30% 30%, #efd6b0, #ab8e64);
+    border: 6px solid #5a4530;
+    border-radius: 50%;
+    box-shadow:
+            0 8px 0 #2f2419,
+            inset 0 -5px 10px #6b5a3a,
+            inset 0 5px 15px #fff0d0;
+    cursor: pointer;
+    transition: all 0.05s ease;
+    position: relative;
+    user-select: none;
+}
+
+/* ЭФФЕКТ НАЖАТИЯ НА ДИСК */
+.dial:active {
+    transform: translateY(5px);
+    box-shadow:
+            0 3px 0 #2f2419,
+            inset 0 -5px 10px #6b5a3a,
+            inset 0 5px 15px #fff0d0;
+}
+
+/* НАСЕЧКИ НА ДИСКЕ */
+.dial::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: repeating-conic-gradient(from 0deg, #5a3e1f 0deg 9deg, transparent 9deg 18deg);
+    opacity: 0.3;
+}
+
+/* КРАСНАЯ СТРЕЛКА-УКАЗАТЕЛЬ */
+.dial::after {
+    content: '▼';
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #d43f3f;
+    font-size: 24px;
+    text-shadow: 0 3px 0 #5a1f1f;
+    z-index: 10;
+}
+
+/* КОНТЕЙНЕР С ЦИФРАМИ НА ДИСКЕ */
+.dial-numbers {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: bold;
+    color: #221a0e;
+    text-shadow: 1px 1px 0 #efd6b0;
+}
+
+/* КАЖДАЯ ЦИФРА НА ДИСКЕ */
+.dial-numbers span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(205, 178, 139, 0.5);
+    border-radius: 50%;
+}
+
+/* ПОЗИЦИОНИРОВАНИЕ КАЖДОЙ ЦИФРЫ ПО КРУГУ */
+.dial-numbers span:nth-child(1) { transform: translate(-50%, -50%) rotate(0deg) translateY(-38px) rotate(0deg); }
+.dial-numbers span:nth-child(2) { transform: translate(-50%, -50%) rotate(36deg) translateY(-38px) rotate(-36deg); }
+.dial-numbers span:nth-child(3) { transform: translate(-50%, -50%) rotate(72deg) translateY(-38px) rotate(-72deg); }
+.dial-numbers span:nth-child(4) { transform: translate(-50%, -50%) rotate(108deg) translateY(-38px) rotate(-108deg); }
+.dial-numbers span:nth-child(5) { transform: translate(-50%, -50%) rotate(144deg) translateY(-38px) rotate(-144deg); }
+.dial-numbers span:nth-child(6) { transform: translate(-50%, -50%) rotate(180deg) translateY(-38px) rotate(-180deg); }
+.dial-numbers span:nth-child(7) { transform: translate(-50%, -50%) rotate(216deg) translateY(-38px) rotate(-216deg); }
+.dial-numbers span:nth-child(8) { transform: translate(-50%, -50%) rotate(252deg) translateY(-38px) rotate(-252deg); }
+.dial-numbers span:nth-child(9) { transform: translate(-50%, -50%) rotate(288deg) translateY(-38px) rotate(-288deg); }
+.dial-numbers span:nth-child(10) { transform: translate(-50%, -50%) rotate(324deg) translateY(-38px) rotate(-324deg); }
+
+/* ЦИФРОВОЕ ЗНАЧЕНИЕ ПОД ДИСКОМ */
+.dial-value {
+    width: 50px;
+    height: 50px;
+    background: #1a1a1a;
+    border: 4px solid #b89a70;
+    border-radius: 10px;
+    color: #ffd700;
+    font-size: 28px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Digital', monospace;
+    box-shadow: inset 0 0 10px #000;
+}
+
+/* КНОПКА "ЗАГРУЗИТЬ" */
+.enter-btn {
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+    padding: 15px;
+    background: #cdb28b;
+    background: linear-gradient(to bottom, #efd6b0, #ab8e64);
+    border: 4px solid #5a3e1f;
+    border-radius: 50px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #2c1f10;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 0 #d4bc94;
+    box-shadow:
+            0 8px 0 #3a2816,
+            inset 0 2px 10px #fff0d0;
+    cursor: pointer;
+    transition: all 0.1s ease;
+    font-family: 'Impact', 'Courier New', monospace;
+    letter-spacing: 2px;
+}
+
+.enter-btn:active {
+    transform: translateY(5px);
+    box-shadow:
+            0 3px 0 #3a2816,
+            inset 0 2px 10px #fff0d0;
+}
+
+/* ПАНЕЛЬ С КНОПКАМИ ОПЕРАЦИЙ */
+.operations {
+    background: #6b5a3e;
+    border: 5px solid #ab8e64;
+    border-radius: 25px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: inset 0 0 15px #2f2419;
+}
+
+/* РЯД КНОПОК ОПЕРАЦИЙ */
+.operations-row {
+    display: flex;
+    justify-content: space-around;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.operations-row:last-child {
+    margin-bottom: 0;
+}
+
+/* КНОПКА ОПЕРАЦИИ */
+.op-btn {
+    flex: 1;
+    padding: 15px 0;
+    background: #5a4a33;
+    background: radial-gradient(circle at 30% 30%, #8b7355, #4a3720);
+    border: 3px solid #c0a070;
+    border-radius: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #f0e0c0;
+    text-shadow: 2px 2px 0 #2c1f10;
+    box-shadow:
+            0 5px 0 #2f2419,
+            inset 0 2px 10px #e8d2b0;
+    cursor: pointer;
+    transition: all 0.1s ease;
+}
+
+.op-btn:active {
+    transform: translateY(3px);
+    box-shadow:
+            0 2px 0 #2f2419,
+            inset 0 2px 10px #e8d2b0;
+}
+
+/* КНОПКИ УПРАВЛЕНИЯ (ВЫЧИСЛИТЬ И СБРОС) */
+.controls {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* ОБЩИЙ СТИЛЬ ДЛЯ КНОПОК УПРАВЛЕНИЯ */
+.action-btn {
+    flex: 1;
+    padding: 18px;
+    background: #cdb28b;
+    background: linear-gradient(to bottom, #f0d8b0, #ab8e64);
+    border: 4px solid #5a4530;
+    border-radius: 30px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #2c1f10;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 0 #d4bc94;
+    box-shadow:
+            0 7px 0 #3a2816,
+            inset 0 2px 10px #fff0d0;
+    cursor: pointer;
+    transition: all 0.1s ease;
+    font-family: 'Impact', 'Courier New', monospace;
+    letter-spacing: 2px;
+}
+
+/* КНОПКА СБРОС (ОТДЕЛЬНЫЙ ЦВЕТ) */
+.action-btn.reset {
+    background: linear-gradient(to bottom, #b88a6b, #8b5a3a);
+    color: #ffd7b0;
+    text-shadow: 2px 2px 0 #4a2816;
+}
+
+.action-btn:active {
+    transform: translateY(4px);
+    box-shadow:
+            0 3px 0 #3a2816,
+            inset 0 2px 10px #fff0d0;
+}
+
+/* НИЖНЯЯ ПОДПИСЬ С ЦИТАТАМИ */
+.footer-quote {
+    margin-top: 25px;
+    text-align: center;
+    color: #e8d2b0;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: bold;
+    text-shadow: 2px 2px 0 #3a2816;
+    border-top: 2px dashed #b89a70;
+    padding-top: 15px;
+}
+
+/* АНИМАЦИЯ ТРЯСКИ ДЛЯ ОШИБОК */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    75% { transform: translateX(10px); }
+}
+
+.error-shake {
+    animation: shake 0.3s ease-in-out;
+}
+
+/* АНИМАЦИЯ ЩЕЛЧКА ДЛЯ ДИСКА */
+.dial-click {
+    animation: clickEffect 0.1s ease-in-out;
+}
+
+@keyframes clickEffect {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.95); }
+    100% { transform: scale(1); }
+}
+
+/* Чтобы цифры при повороте не искажались */
+.dial-numbers {
+    transition: transform 0.1s ease-out;
+    will-change: transform;
+}

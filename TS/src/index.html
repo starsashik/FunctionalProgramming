@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ковбойский калькулятор</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="saloon">
+    <div class="calculator safe">
+        <!-- Вывеска -->
+        <div class="sign">
+            <h1>SHERIFF'S CALC</h1>
+            <p>МАТЕМАТИКА ПО-КОВБОЙСКИ</p>
+        </div>
+
+        <!-- Дисплей -->
+        <div class="display">
+            <div class="expression" id="expression">0</div>
+            <div class="error-message" id="errorMessage"></div>
+        </div>
+
+        <!-- Кодовый замок (4 разряда) -->
+        <div class="lock-section">
+            <div class="lock-label">ВВЕДИ ЧИСЛО, ПАРТНЁР</div>
+            <div class="dial-row">
+                <div class="dial-container" data-position="0">
+                    <div class="dial" id="dial1">
+                        <div class="dial-numbers">
+                            <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span>
+                            <span>5</span><span>6</span><span>7</span><span>8</span><span>9</span>
+                        </div>
+                    </div>
+                    <div class="dial-value" id="dialValue1">0</div>
+                </div>
+
+                <div class="dial-container" data-position="1">
+                    <div class="dial" id="dial2">
+                        <div class="dial-numbers">
+                            <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span>
+                            <span>5</span><span>6</span><span>7</span><span>8</span><span>9</span>
+                        </div>
+                    </div>
+                    <div class="dial-value" id="dialValue2">0</div>
+                </div>
+
+                <div class="dial-container" data-position="2">
+                    <div class="dial" id="dial3">
+                        <div class="dial-numbers">
+                            <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span>
+                            <span>5</span><span>6</span><span>7</span><span>8</span><span>9</span>
+                        </div>
+                    </div>
+                    <div class="dial-value" id="dialValue3">0</div>
+                </div>
+
+                <div class="dial-container" data-position="3">
+                    <div class="dial" id="dial4">
+                        <div class="dial-numbers">
+                            <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span>
+                            <span>5</span><span>6</span><span>7</span><span>8</span><span>9</span>
+                        </div>
+                    </div>
+                    <div class="dial-value" id="dialValue4">0</div>
+                </div>
+            </div>
+
+            <!-- Кнопка ввода числа с дисков -->
+            <button class="enter-btn" id="enterNumber">ЗАГРУЗИТЬ</button>
+        </div>
+
+        <!-- Панель операций -->
+        <div class="operations">
+            <div class="operations-row">
+                <button class="op-btn" data-op="add">➕</button>
+                <button class="op-btn" data-op="subtract">➖</button>
+                <button class="op-btn" data-op="multiply">✖️</button>
+                <button class="op-btn" data-op="divide">➗</button>
+            </div>
+            <div class="operations-row">
+                <button class="op-btn" data-op="power">xʸ</button>
+                <button class="op-btn" data-op="sqrt">√</button>
+                <button class="op-btn" data-op="percent">%</button>
+            </div>
+        </div>
+
+        <!-- Панель управления -->
+        <div class="controls">
+            <button class="action-btn" id="calculate">ВЫЧИСЛИТЬ</button>
+            <button class="action-btn reset" id="reset">СБРОС</button>
+        </div>
+
+        <!-- Подпись (ковбойская мудрость) -->
+        <div class="footer-quote" id="quote">
+            "Считай аккуратно, ковбой..."
+        </div>
+    </div>
+</div>
+
+<script src="lab2.js"></script>
+</body>
+</html>
